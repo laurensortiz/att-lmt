@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # att-lmt #
 
 Local Marketing Tool for AT&T Sales Support.
@@ -41,9 +40,3 @@ To watch the /sass folder for new files, changes, or deletions run the following
 
 ### Using backbone.js with require.js ###
 NEED: Write description of backbone setup
-=======
-att-lmt
-=======
-
-App for AT&amp;T
->>>>>>> 7321c5e8bc314aebe5ee37d2a3ed7786300632b6
