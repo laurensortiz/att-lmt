@@ -1,0 +1,33 @@
+<!-- extra channels modal -->
+<h1>Extra Channels</h1>
+<div class="col left">
+	<h5>Select Package</h5>
+	<div class="selectbox">
+		<select>
+			{#extraChannelGroups}
+			<option value="{.|u}">{.}</option>
+			{/extraChannelGroups}
+		</select>
+		<span class="select-text"></span><span class="select-arrow"></span>
+	</div>
+	{#extraChannels.channelList}
+	<div class="custom-checkbox {group|u}">
+		<input id="{componentCode}" class="extra-channel" type="checkbox" {?selected} checked="checked"{/selected}>
+		<span class="box"><span class="tick"></span></span>
+	</div>
+	<label for="{componentCode}" class="{group|u}">{displayName}</label>
+	{/extraChannels.channelList}
+</div>
+<div id="selected-channels" class="col right">
+	<h5>Selected Channels</h5>
+	<div id="list-package">
+		{#selectedChannels}
+		<p id="{componentCode}">{displayName}</p>
+		{/selectedChannels}
+	</div>
+	<p class="package-total">Added to Package</p>
+	<div class="buttons">
+		<input type="reset" class="button gray" value="Clear" />
+		<input type="submit" class="button orange" value="Submit" />
+	</div>
+</div>

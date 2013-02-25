@@ -1,0 +1,1 @@
+(function(){dust.register("modals-error",body_0);function body_0(chk,ctx){return chk.write("<!-- error modal --><h1>Error :(</h1><p>").reference(ctx.get("message"),ctx,"h").write("</p>");}return body_0;})();

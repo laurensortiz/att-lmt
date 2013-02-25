@@ -1,0 +1,91 @@
+<!-- tv tab -->
+
+{#VideoBasic}
+<h1>Digital TV Packages</h1>
+<div class="hero">
+	{#attributeList} {@eq key="{attributeCode}" value="availBasicPackage"}
+	<figure><img src="img/tv.jpg" alt="TV with Remote and Cable Box"></figure>
+	<div class='description'>
+		<h2>{attributeDisplayName}</h2>
+		<p>TotalHome DVR, 1 wireless HD-ready Receiver and the HD Tech Fee</p>
+		<button class="short blue listChannels">Channels</button>
+		<div class="selectbox">
+			<select id="iptvPlan">
+				{#validValueList}
+				<option value="{value}">{name}</option>
+				{/validValueList}
+	{/eq} {/attributeList}
+			</select>
+			<span class="select-text">{iptvPlanName}</span><span class="select-arrow"></span>
+		</div>
+	</div>
+</div>
+{/VideoBasic}
+<hr/>
+<div class="options">
+	<section>
+		<h3># of Receivers*</h3>
+		{?wirelessReceivers} 
+		<div class="group">
+			<div class="selectbox">
+				<select id="wirelessReceiver">
+					{#wirelessReceivers} 
+					<option{?selected} selected="selected"{/selected}>{value}</option>
+					{/wirelessReceivers}
+				</select>
+				<span class="select-text">{#wirelessReceivers}{?selected}{value}{/selected}{/wirelessReceivers}</span><span class="select-arrow"></span>
+			</div>
+			<label>Wireless</label>
+			<div class="price">$49.00</div>
+		</div>
+		{/wirelessReceivers} 
+		{?wiredReceivers}
+		<div class="group">
+			<div class="selectbox">
+				<select id="wiredReceiver">
+					<option>0</option>
+					{#wiredReceivers} 
+					<option{?selected} selected="selected"{/selected}>{value}</option>
+					{/wiredReceivers}
+				</select>
+				<span class="select-text">0</span><span class="select-arrow"></span>
+			</div>
+			<label>Wired</label>
+			<div class="price">$0.00</div>
+		</div>
+		{/wiredReceivers}
+	</section>
+	<section>
+		<h3>Add Selections</h3>
+		<div class="group">
+			<div class="custom-checkbox">
+				<input type="checkbox" id="tHomeDvr"{?tHomeDvr} checked="checked"{/tHomeDvr}>
+				<span class="box"><span class="tick"></span></span>
+			</div>
+			<label for="homeowner">Total Homeowner</label>
+			<div class="price">$0.00</div>
+		</div>
+		<div class="group">
+			<div class="custom-checkbox">
+				<input type="checkbox" id="hDef"{?hDef} checked="checked"{/hDef}>
+				<span class="box"><span class="tick"></span></span>
+			</div>
+			<label>High Definition</label>
+			<div class="price">$0.00</div>
+		</div>
+		<div class="group">
+			<div class="custom-checkbox">
+				<input type="checkbox" id="hdPrem"{?hDPrem} checked="checked"{/hDPrem}>
+				<span class="box"><span class="tick"></span></span>
+			</div>
+			<label>HD<br/> Premium</label>
+			<div class="price">$0.00</div>
+		</div>
+	</section>
+	<section >
+		<a class="modal-link international-programming" href="#/modal/international-programming">&gt; International Programming</a>
+		<div class="price">$0.00</div>
+		<a class="modal-link movies-sports" href="#/modal/movies-sports">&gt; Movie, Sports &amp; SVOD</a>
+		<div class="price">$0.00</div>
+	</section>
+</div>

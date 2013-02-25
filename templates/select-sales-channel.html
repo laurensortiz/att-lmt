@@ -1,0 +1,22 @@
+<div class="hero">
+	<figure><img src="img/att-logo-login@2x.png" width="102" height="102" ></figure>
+	<h2>Welcome to</h2>
+	<h1>AT&amp;T Local Marketing Tool</h1>
+</div>
+
+<div class="location-search">
+	<h3>select sales channel</h3>
+	<div class="selectbox">
+		<select>
+			<option value="" selected>select channel</option>
+			{#allSalesChannels}
+			<option id="{abbreviation}" value="{abbreviation}">{name}</option>
+			{/allSalesChannels}
+		</select>
+		<span class="select-text">select channel</span><span class="select-arrow"></span>
+	</div>
+	<button class="orange short">Next Step</button>
+</div>
+
+<footer>
+</footer>

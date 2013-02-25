@@ -1,0 +1,119 @@
+// This file has styles for the sidebar navigation tabs
+
+aside {
+	float: right;
+	width: 288px;
+	padding-bottom: 60px;
+	overflow-x: hidden;
+
+	a {
+		height: 90px;
+		display: block;
+		border-top: 1px solid #c7c7c7;
+		border-left: 1px solid #c7c7c7;
+		background-color: #f5f5f5;
+		cursor: pointer;
+		text-decoration: none;
+
+		figure {
+			float: left;
+			width: 41px;
+			height: 40px;
+			margin: 25px 17px;
+			@include background-image-retina(sidebar-sprite,png,41px,160px);
+			background-position: 0 0;
+		}
+
+		h2 {
+			color: #333;
+			font-size: .93em;
+			font-family: 'omnes_att_mediumitalic', Helvetica, sans-serif;
+			line-height: .90em;
+			padding-top: 10px;
+		}
+		h4 {
+			color: #949494;
+			font-size: .75em;
+			font-family: 'omnes_att_lightitalic', Helvetica, sans-serif;
+			margin-top: 6px;
+		}
+		p {
+			color: #949494;
+			font-size: 1.56em;
+			font-family: 'omnes_att_regularregular', Helvetica, sans-serif;
+		}
+		div {
+			float: left;
+			min-width: 90px;
+			padding-right: 10px;
+		}
+	}
+	a.active {
+		position: relative;
+		border-left: 1px solid #ffffff;
+		background-color: #ffffff;
+		// &:before, &:after {
+		// 	position: absolute;
+		// 	left: 0;
+		// 	content: ' ';
+		// 	width: 288px;
+		// 	height: 30px;
+		// 	@include background-image-retina('tab-shadow', 'png', '288px', '30px');
+		// }
+		// &:before { top: -15px; }
+		// &:after { bottom: 15px; }
+	}
+	div {
+		float: left;
+		min-width: 90px;
+		padding-right: 10px;
+		&.monthly { padding-right: 0; }
+	}
+
+	.PLSTECH { display: none; }
+	.VideoBasic { border-top: 0; }
+	.VideoBasic figure { background-position: 0 0; }
+	.HSIA figure { background-position: 0 -40px; }
+	.CVOIP figure { background-position: 0 -80px; }
+	.CHN figure { background-position: 0 -120px; }
+
+	.total {
+		padding: 20px 30px;
+		width: 228px;
+		background-color: #f5f5f5;
+		border-top: 1px solid #c7c7c7;
+		border-left: 1px solid #c7c7c7;
+		h1{
+			font-size: 1.125em;
+			margin-bottom: 10px;
+			font-family: 'omnes_att_regularitalic';
+			color: #333;
+		}
+		h4{
+			color: #949494;
+			font-size: .75em;
+			font-family: 'omnes_att_lightitalic', Helvetica, sans-serif;
+		}
+		p{
+			font-size: 1.872em;
+			font-family: 'omnes_att_regularregular', Helvetica, sans-serif;
+		}
+	}
+	.checkout {
+		float: left;
+		width: 188px;
+		height: auto;
+		text-decoration: none;
+		font-size: 1.125em;
+		color: #515151;
+		padding: 25px 36px 25px 64px;
+		font-family: 'omnes_att_regularitalic';
+		border-bottom: 1px solid #c7c7c7;
+		background-image: url(../img/arrow-left.png);
+		background-repeat: no-repeat;
+		background-position: 10% center;
+		&.active {
+			border-bottom: 0;
+		}
+	}
+}

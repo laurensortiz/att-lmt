@@ -1,0 +1,204 @@
+@mixin inline-block {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	vertical-align: middle;
+}
+
+@mixin stilt {
+	@include inline-block;
+	width: 0;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-size: 0;
+}
+
+@mixin corner-to-corner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+@mixin transition($value) {
+	-moz-transition: $value;
+	-o-transition: $value;
+	-ms-transition: $value;
+	-webkit-transition: $value;
+	transition: $value;
+}
+
+@mixin rgba-background($rgbaValue, $ieFilterValue){
+  :not(.lt-ie9) & {background: $rgbaValue;}
+  .lt-ie9 & {
+  	background: transparent;
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$ieFilterValue},endColorstr=##{$ieFilterValue});
+  	zoom:1;
+  }
+}
+
+@mixin linear-gradient($from, $to) {
+  background-color: $to;
+  background-image: -ms-linear-gradient(top, $from 0%, $to 100%); /* IE10 Consumer Preview */
+  background-image: -moz-linear-gradient(top, $from 0%, $to 100%); /* Mozilla Firefox */ 
+  background-image: -o-linear-gradient(top, $from 0%, $to 100%); /* Opera */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to)); /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-linear-gradient(top, $from 0%, $to 100%); /* Webkit (Chrome 11+) */
+  background-image: linear-gradient(to bottom, $from 0%, $to 100%); /* W3C Markup, IE10 Release Preview */ 
+}
+
+@mixin linear-gradient-horizontal($from, $to) {
+  background-color: $from;
+  background-image: -ms-linear-gradient(left, $from 0%, $to 100%); /* IE10 Consumer Preview */
+  background-image: -moz-linear-gradient(left, $from 0%, $to 100%); /* Mozilla Firefox */ 
+  background-image: -o-linear-gradient(left, $from 0%, $to 100%); /* Opera */ 
+  background-image: -webkit-gradient(linear, left top, right top, color-sleft(0, $from), color-sleft(1, $to)); /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-linear-gradient(left, $from 0%, $to 100%); /* Webkit (Chrome 11+) */
+  background-image: linear-gradient(to bottom, $from 0%, $to 100%); /* W3C Markup, IE10 Release Preview */ 
+}
+
+@mixin icon($width, $height, $top, $bposx, $bposy) {
+	&:before {
+		position: relative;
+		float: left;
+		top: $top;
+		width: $width;
+		height: $height;
+		margin-right: 5px;
+		content: ' ';
+		background-image: url('icon-sprite.png');
+		background-position: $bposx $bposy;
+	}
+}
+
+@mixin answers-spectrum($property){
+	//adam - this is lame.  can't use argument to set css Property!  Values only?  wt???
+	@if $property=="background" {
+		&.answer1 {
+	    background: #6aa81d;
+	  }
+	  &.answer2 {
+	    background: #d38224;
+	  }
+	  &.answer3 {
+	    background: #c90051;
+	  }
+	  &.answer4 {
+	    background: #225b93;
+	  }
+	  &.answer5 {
+	    background: #903090;
+	  }
+	}
+	@if $property=="color" {
+		&.answer1 {
+	    color: #6aa81d;
+	  }
+	  &.answer2 {
+	    color: #d38224;
+	  }
+	  &.answer3 {
+	    color: #c90051;
+	  }
+	  &.answer4 {
+	    color: #225b93;
+	  }
+	  &.answer5 {
+	    color: #903090;
+	  }
+	}
+
+}
+
+@mixin buttons($sizeradius){
+	-webkit-border-radius: $sizeradius;
+	-moz-border-radius: $sizeradius;
+	border-radius: $sizeradius;
+	padding: 10px 40px;
+	font-size: 1.2em;
+	border: 0;
+}
+
+@mixin borderRadius($size){
+	-webkit-border-radius: $size;
+	-moz-border-radius: $size;
+	border-radius: $size;
+}
+
+@mixin border($color,$size:1px){
+	border: $size solid $color;
+}
+@mixin button-height($size){
+	height: $size;
+}
+
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url('../img/' + $file + '.' + $type);
+  background-repeat: no-repeat;
+
+  // removed retina images because of display errors
+  // @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+  //   & {
+  //     background-image: url('../img/' + $file + '@2x.' + $type);
+  //     -webkit-background-size: $width $height;
+  //   }
+  // }
+}
+
+@mixin infinite-rotate() {
+	/*animation-name*/
+	-webkit-animation-name:rotate;
+	   -moz-animation-name:rotate;
+	    -ms-animation-name:rotate;
+	     -o-animation-name:rotate;
+	        animation-name:rotate;
+	/*animation-duration*/
+	-webkit-animation-duration:0.5s;
+	   -moz-animation-duration:0.5s;
+	    -ms-animation-duration:0.5s;
+	     -o-animation-duration:0.5s;
+	        animation-duration:0.5s;
+	/*animation-iteration-count*/
+	-webkit-animation-iteration-count:infinite;
+	   -moz-animation-iteration-count:infinite;
+	    -ms-animation-iteration-count:infinite;
+	     -o-animation-iteration-count:infinite;
+	        animation-iteration-count:infinite;
+	/*transition-timing-function*/
+	-webkit-transition-timing-function:linear;
+	   -moz-transition-timing-function:linear;
+	     -o-transition-timing-function:linear;
+	        transition-timing-function:linear;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@mixin pseudoelement($width,$height,$position, $content:' '){
+	content: $content;
+	display: block;
+	position: $position;
+	width: $width ;
+	height: $height ;
+
+
+}
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}

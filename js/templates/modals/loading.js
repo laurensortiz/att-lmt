@@ -1,0 +1,1 @@
+(function(){dust.register("modals-loading",body_0);function body_0(chk,ctx){return chk.write("<!-- loading modal --><figure></figure><p>").reference(ctx.get("message"),ctx,"h").write("</p>");}return body_0;})();

@@ -1,0 +1,93 @@
+// global styles
+
+// remove js warning
+.js-warning { display: none; }
+.no-js .js-warning { display: block; }
+.hidden {display:none;}
+.lt-ie10 label.hidden{display:inline; }
+
+html, body{
+	height: 100%;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'omnes_att_lightregular', Helvetica, sans-serif;
+	font-weight: normal;
+}
+.icon {
+	text-indent: 100%;
+    font-size: 0;
+	line-height: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	@include inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.fixed{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 0;
+}
+section {
+	height:100%;
+	@include linear-gradient(#fff,#e9ebf3);
+
+	.hero {
+		max-width: 905px;
+		margin: 0 auto;
+		padding-top: 115px;
+		figure{
+			float: left;
+			margin: 10px 15px 0 0;
+		}
+	}
+	h1, h2, h3{
+		
+	}
+	h1, h2{
+		font-size: 3.875em;
+		line-height: 1em;
+		padding-left: 107px;
+	}
+	h2, h3{
+		color: #3a3a3a;
+		font-family: 'omnes_att_lightitalic', Helvetica, sans-serif;
+	}
+	h1 {
+		color: #0096d6;
+		font-family: 'omnes_att_mediumitalic', Helvetica, sans-serif;
+	}
+	h3{
+
+		font-size: 3.125em;
+		line-height: 2em;
+	}
+
+	#addr1,#addr2{
+		width: 270px;
+	}
+	#city{
+		width: 100px;
+	}
+	#state{
+		width: 40px;
+	}
+	#city, #state{
+		margin-right: 8px
+	}
+	#zip{
+		width: 62px;
+	}
+	#phone{
+		width: 198px;
+
+	}
+}

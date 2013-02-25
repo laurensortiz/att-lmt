@@ -1,0 +1,52 @@
+// There are four LMT buttons. 2 are large in height. 2 are short in height.
+// There is an orange and a grey for both heights.
+// This file contains styles for those 4 buttons
+button, input[type="submit"], input[type="reset"]{
+	font-family: 'clearviewattregular', Helvetica, sans-serif;
+	font-size: 1.06em;
+
+	&.orange{
+		@include buttons(3px);
+		@include linear-gradient(#f8af78,#f47a1f);
+		color: #fff;
+		&:hover{
+			@include linear-gradient(#f47a1f, #f8af78);
+		}
+	}
+	&.gray{
+		@include buttons(3px);
+		@include linear-gradient(#fff,#e7e7e7);
+		@include border(#e5e5e5);
+		color: #f97738;
+		&:hover{
+			@include linear-gradient(#e7e7e7, #fff);
+		}
+	}
+	&.blue{
+		@include buttons(3px);
+		@include linear-gradient(#7bbddd,#2491c6);
+		@include border(#cde6f2);
+		text-shadow: 1px 1px 2px rgba(0,0,0,.25);
+		color: #fff;
+		font-size: 15px;
+		&:hover{
+			@include linear-gradient(#2491c6, #7bbddd);
+		}
+	}
+	&:disabled{
+		@include linear-gradient(#b3b3b3,#808080);
+		color: #fff;
+		&:hover{
+			@include linear-gradient(#b3b3b3,#808080);
+			cursor: default;
+		}
+	}
+}
+
+.short{
+	@include button-height(42px);
+
+}
+.large{
+	@include button-height(42px);
+}

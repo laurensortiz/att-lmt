@@ -1,0 +1,1 @@
+(function(){dust.register("modals-reset",body_0);function body_0(chk,ctx){return chk.write("<!-- reset modal --><h1>Warning</h1><p>Resetting this app will revert all selections back to their default.</p><button class=\"reset short orange\">Reset</button>");}return body_0;})();

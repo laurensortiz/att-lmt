@@ -1,0 +1,38 @@
+<!-- voice tab -->
+
+<h1>U-verse Voice</h1>
+{#CVOIP}
+<div class="hero">
+	{#attributeList} {@eq key="{attributeCode}" value="usagePlan"}
+	<figure><img src="img/voice.jpg" alt="TV with Remote and Cable Box"></figure>
+	<div class='description'>
+		<h2>{#validValueList}{@eq key="{value}" value="{selectedValidValueItemValue}"}{name}{/eq}{/validValueList}</h2>
+		<p>U-verse Voice gives you all your favorite home phone features like Voicemail, Call Waiting, and Call Forwarding.</p>
+		<div class="selectbox">
+			<select id="cvoipPlan">
+				{#validValueList}
+				<option value="{value}">{name}</option>
+				{/validValueList}
+			</select>
+			<span class="select-text">{cvoipPlanName}</span><span class="select-arrow"></span>
+		</div>
+	</div>
+	{/eq} {/attributeList}
+</div>
+{/CVOIP}
+<hr/>
+<div class="options">
+	<section>
+		<h3># OF LINES</h3>
+		<div class="group">
+			<div class="selectbox">
+				<select id="secondVoipLine">
+					<option value="false" selected>1</option>
+					<option value="true">2</option>
+				</select>
+				<span class="select-text">1</span><span class="select-arrow"></span>
+			</div>
+			<div class="price">$49.00</div>
+		</div>
+	</section>
+</div>

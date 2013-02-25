@@ -1,0 +1,9 @@
+<!-- multiple addresses modal -->
+<h1>Did you mean?</h1>
+<form>
+{#address}
+	<input type="radio" name="address" id="{addressLine1|u}-{@idx}{.}{/idx}" value="{addressLine1} {addressLine2} {city}, {state}, {zipCode}">
+	<label for="{addressLine1|u}-{@idx}{.}{/idx}">{addressLine1} {addressLine2} {city}, {state}, {zipCode}</label>
+{/address}
+</form>
+<button class="multiple short orange">Submit</button>

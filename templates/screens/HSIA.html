@@ -1,0 +1,38 @@
+<!-- internet tab -->
+
+{#HSIA}
+<h1>High Speed Internet</h1>
+<div class="hero">
+	{#attributeList} {@eq key="{attributeCode}" value="Speed"}
+	<figure><img src="img/hsi.jpg" alt="TV with Remote and Cable Box"></figure>
+	<div class='description'>
+		<h2>Max Turbo</h2>
+		<p>Download movies, video chat, watch streaming video, and play games online at super fast speeds.</p>
+		<div class="selectbox">
+			<select id="hsiaPlan">
+				{#validValueList}
+				<option value="{value}">{name}</option>
+				{/validValueList}
+	{/eq} {/attributeList}
+			</select>
+			<span class="select-text">{hsiaPlanName}</span><span class="select-arrow"></span>
+		</div>
+	</div>
+</div>
+<hr/>
+<p class="disclaimer">Internet Only or Internet/Voice orders may qualify for self service installation with an activation fee of $49.99 </p>
+<div class="options">
+	<section>
+		<a class="international-programming">> CONNECT TECH PACKAGES</a>
+		<div class="price">$0.00</div>
+	</section>
+	<section>
+		<a class="movies-sports">> INSTALLATION CHARGES</a>
+		<div class="price">$0.00</div>
+	</section>
+	<section>
+		<a class="movies-sports">> EQUIPMENT CHARGES</a>
+		<div class="price">$0.00</div>
+	</section>
+</div>
+{/HSIA}

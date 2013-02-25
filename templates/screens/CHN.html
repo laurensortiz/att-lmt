@@ -1,0 +1,23 @@
+<!-- promotions tab -->
+
+{#promotions}
+<header>
+<h1>Promotions</h1>
+<p>ARE YOU AN EXISTING WIRELESS CUSTOMER?</p> 
+<div class="selectbox">
+	<select>
+		<option value="yes">YES</option>
+		<option value="no">NO</option>
+	</select>
+	<span class="select-text">YES</span><span class="select-arrow"></span>
+</div>
+</header>
+<div id="promo-selection" class="options">
+	{#eligiblePackages}
+	<div class="promotion">
+		<div class="custom-radio"><span class="circle"></span><input id="{packageId}" class="radioLike" type="radio" name="promotionCode" value="{packageId}"></div>
+		<label for="{packageId}">{pacakgeDescription}</label>
+	</div>
+	{/eligiblePackages}
+</div>
+{/promotions}

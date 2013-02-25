@@ -1,0 +1,61 @@
+<!-- channels template -->
+<div class="onTop fixed">
+	<div class="contentTop">
+		<button class="search-btn"></button>
+		<input class="search" type="text" name="search_channel" value="" placeholder="search for a channel">
+		<button id="english_package" class="short">English Packages</button>
+		<button id="latino_package" class="short">Latino Packages</button>
+		<div class="filter-channel">
+			<h4>Filter Channels</h4>
+			{#channelFilters}
+			<div class="custom-checkbox">
+				<input id="{.|u}" type="checkbox" value="{.|u}">
+				<span class="box"><span class="tick"></span></span>
+			</div>
+			<label for="{.|u}">{.}</label>
+			{/channelFilters}
+		</div>
+	</div>
+	<table class="channel-list-header english" width="100%">
+		<tr>
+			<th class="channelList active"><a id="channelList" href="#">Channel List</a></th>
+			<th><a id="u450" href="#">U450</a></th>
+			<th><a id="u300" href="#">U300</a></th>
+			<th><a id="u200" href="#">U200</a></th>
+			<th><a id="ufamily" href="#">U-family</a></th>
+		</tr>
+	</table>
+	<table class="channel-list-header latino" width="100%">
+		<tr>
+			<th class="channelList active"><a id="channelList" href="#">Channel List</a></th>
+			<th><a id="spnsh" href="#">Spanish</a></th>
+			<th><a id="u200l" href="#">U200l</a></th>
+			<th><a id="u300l" href="#">U300l</a></th>
+			<th><a id="u450l" href="#">U450l</a></th>
+		</tr>
+	</table>
+</div>
+<div id="list-data-channels">
+	<table width='100%'>
+	{#channels}
+	{@if cond="'{pSpnsh}'.length || '{pU200l}'.length || '{pU300l}'.length || '{pU450l}'.length"}
+		<tr class="{channelCategory|u} latino{?pSpnsh} spnsh{/pSpnsh}{?pU200l} u200l{/pU200l}{?pU300l} u300l{/pU300l}{?pU450l} u450l{/pU450l}">
+			<td class="channelList">{channelName}</td>
+			<td class="spnsh">{?pSpnsh}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pSpnsh}</td>
+			<td class="u200l">{?pU200l}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU200l}</td>
+			<td class="u300l">{?pU300l}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU300l}</td>
+			<td class="u450l">{?pU450l}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU450l}</td>
+		</tr>
+	{/if}
+	{@if cond="'{pU450}'.length || '{pU300}'.length || '{pU200}'.length || '{pUfam}'.length"}
+		<tr class="{channelCategory|u} english{?pU200} u200{/pU200}{?pU300} u300{/pU300}{?pU450} u450{/pU450}{?pUfam} ufamily{/pUfam}">
+			<td class="channelList">{channelName}</td>
+			<td class="u450">{?pU450}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU450}</td>
+			<td class="u300">{?pU300}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU300}</td>
+			<td class="u200">{?pU200}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pU200}</td>
+			<td class="ufamily">{?pUfam}<img src="img/dot-blue.png" width="15" height="15">{:else}Optional{/pUfam}</td>
+		</tr>
+	{/if}
+	{/channels}
+	</table>
+</div>
